@@ -3,7 +3,6 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  background-color: pink;
 }
 
 .header {
@@ -15,4 +14,17 @@
 
 .read-the-docs {
   color: #888;
+}
+.nav {
+  display: flex;
+  gap: 2rem;
+}
+.link {
+  color: purple;
+  font-size: 26px;
+  text-decoration: none;
+}
+.active {
+  color: red;
+  text-decoration: underline;
 }
