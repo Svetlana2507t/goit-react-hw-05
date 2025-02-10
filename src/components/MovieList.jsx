@@ -11,10 +11,9 @@ const MovieList = ({ movies }) => {
         {movies.map(movie => (
           <li key={movie.id}>
             <Link
-              // to={`/movies/${movie.id}}${searchParams}`}
-              // state={{ from: location }}
               to={`/movies/${movie.id}${location.search}`}
               state={{ from: location }}
+              //state={{ location }}
             >
               {movie.title}
             </Link>

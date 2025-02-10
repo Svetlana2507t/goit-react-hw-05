@@ -7,7 +7,6 @@ const MovieDetails = () => {
   const { movieId } = useParams();
   const location = useLocation();
   const goBackUrl = useRef(location.state?.from || { pathname: '/movies' });
-  // const goBackUrl = useRef(location.state ?? '/movies');
 
   const [movie, setMovie] = useState(null);
   const baseImgURL = 'https://image.tmdb.org/t/p/w500/';
