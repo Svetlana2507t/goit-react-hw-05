@@ -4,8 +4,8 @@ import Navigation from './Navigation';
 import { Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 
-const Cast = lazy(() => import('./Cast'));
-const Reviews = lazy(() => import('./Reviews'));
+const MovieCast = lazy(() => import('./MovieCast'));
+const MovieReviews = lazy(() => import('./MovieReviews'));
 const HomePage = lazy(() => import('../pages/HomePage'));
 const MoviesPage = lazy(() => import('../pages/MoviesPage'));
 const MovieDetailsPage = lazy(() => import('../pages/MovieDetailsPage'));
@@ -20,8 +20,8 @@ const App = () => {
           <Route path="/*" element={<HomePage />} />
           <Route path="/movies" element={<MoviesPage />} />
           <Route path="/movies/:movieId/" element={<MovieDetailsPage />}>
-            <Route path="cast" element={<Cast />} />
-            <Route path="reviews" element={<Reviews />} />
+            <Route path="cast" element={<MovieCast />} />
+            <Route path="reviews" element={<MovieReviews />} />
           </Route>
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

@@ -1,12 +1,13 @@
 import { useParams, useLocation, Link, Outlet } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import { fetchMovieById } from '../api';
-import s from './MovieDetails.module.css'; // Import the CSS module
+import s from './MovieDetails.module.css';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
   const location = useLocation();
-  const goBackUrl = useRef(location.state?.from ?? '/movies');
+  const goBackUrl = useRef(location.state?.from || { pathname: '/movies' });
+  // const goBackUrl = useRef(location.state ?? '/movies');
 
   const [movie, setMovie] = useState(null);
   const baseImgURL = 'https://image.tmdb.org/t/p/w500/';
@@ -35,8 +36,10 @@ const MovieDetails = () => {
       />
       <h2 className={s.movieTitle}>{movie.title}</h2>
       <nav className={s.navLinks}>
-        <Link to="cast">Cast</Link>
-        <Link to="reviews">Reviews</Link>
+        <Link to={{ pathname: 'cast', search: location.search }}>Cast</Link>
+        <Link to={{ pathname: 'reviews', search: location.search }}>
+          Reviews
+        </Link>
       </nav>
       <div>
         <Outlet />
