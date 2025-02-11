@@ -20,9 +20,9 @@ const MovieReviews = () => {
     return <h2>Loading...</h2>;
   }
 
-  //console.log('review', reviews);
+  console.log('review', reviews);
 
-  if (!reviews.result || reviews.result.length === 0) {
+  if (!reviews.results || reviews.results.length === 0) {
     return <h3>No reviews.</h3>;
   }
   return (
